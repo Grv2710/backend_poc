@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const home = require('./routes/home');
 const datas = require('./routes/data')
 
 const mongoURI = process.env.MONGO_URI || "mongodb+srv://onixevo27:19Lcm5dRsZXh1eIC@cluster0.fs43oks.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -8,6 +9,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true }).
 const app = express();
 app.use(express.static('public'))
 app.use(express.json());
+app.use('/api/',home);
 app.use('/api/data',datas);
 
 
