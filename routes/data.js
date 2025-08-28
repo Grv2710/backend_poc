@@ -69,6 +69,22 @@ router.delete('/',async(req,res)=>{
     }
 })
 
+router.delete('/:id', async (req, res) => {
+    try {
+        const data = await Data.findByIdAndDelete(req.params.id);
+
+        if (!data) {
+            return res.status(404).send({ message: "Record not found" });
+        }
+
+        res.send({ message: "Record deleted successfully", data });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send({ message: "Error deleting data", error: err.message });
+    }
+});
+
+
 router.put('/:id', async(req,res)=>{
     try{
         let data = await Data.findByIdAndUpdate(req.params.id,{
