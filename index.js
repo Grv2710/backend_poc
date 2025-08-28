@@ -19,8 +19,8 @@
 
 const mongoose = require('mongoose');
 const express = require('express');
-const home = require('../routes/home');   // adjust path (because now inside /api folder)
-const datas = require('../routes/data');
+const home = require('./routes/home');   // adjust path (because now inside /api folder)
+const datas = require('./routes/data');
 
 const app = express();
 
