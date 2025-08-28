@@ -25,7 +25,7 @@ const datas = require('./routes/data');
 const app = express();
 
 // MongoDB Atlas connection
-const mongoURI = process.env.MONGO_URI || "mongodb+srv://onixevo27:19Lcm5dRsZXh1eIC@cluster0.fs43oks.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const mongoURI = process.env.MONGO_URI || "mongodb+srv://onixevo27:19Lcm5dRsZXh1eIC@cluster0.fs43oks.mongodb.net/v3?retryWrites=true&w=majority";
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('✅ Connected to MongoDB Atlas'))
   .catch(err => console.error('❌ MongoDB connection error:', err));
