@@ -31,7 +31,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch(err => console.error('❌ MongoDB connection error:', err));
 
 app.use(express.json());
-app.use('/api', home);
+app.use('/', home);
 app.use('/api/data', datas);
 
 // ❌ DO NOT use app.listen in Vercel
