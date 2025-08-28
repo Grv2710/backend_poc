@@ -65,7 +65,8 @@ const mongoose = require('mongoose');
 const express = require('express');
 const home = require('./routes/home');
 const datas = require('./routes/data');
-
+const cors = require('cors'); 
+app.use(cors());
 const app = express();
 
 // MongoDB Atlas connection
